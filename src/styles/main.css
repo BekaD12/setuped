@@ -1,0 +1,68 @@
+@import './markdown.css';
+
+/* @import url('https://fonts.googleapis.com/css2?family=Work+Sans:wght@400;700&display=swap'); */
+
+:root {
+  --background: #edf1F5;
+  --button: #000;
+  --button-color: #fff;
+  --button-radius: 1rem;
+  --card-background: #fff;
+  --item-active: #02a9ff;
+  --item-background: #edf1F5;
+  --item-hover: #d6e0ef;
+  --item-radius: .5rem;
+  --shadow: 0 0 2.5rem rgb(0 0 0 / 10%);
+}
+
+html.dark {
+  --background: #14181D;
+  --button: #fff;
+  --button-color: #000;
+  --card-background: #20232D;
+  --item-background: #20232D;
+  --item-hover: #f5f6fd;
+  color-scheme: dark;
+}
+
+* {
+  box-sizing: border-box;
+  -webkit-tap-highlight-color: transparent;
+}
+
+html {
+  background-color: var(--background);
+  font-size: 62.5%;
+}
+
+body {
+  font-size: 1.6rem;
+}
+
+html,
+body,
+#app {
+  height: 100%;
+  margin: 0;
+  padding: 0;
+}
+
+html.dark {
+  background: #121212;
+  color-scheme: dark;
+}
+
+#nprogress {
+  pointer-events: none;
+}
+
+#nprogress .bar {
+  background: rgb(13,148,136);
+  height: 2px;
+  left: 0;
+  opacity: 0.75;
+  position: fixed;
+  top: 0;
+  width: 100%;
+  z-index: 1031;
+}
