@@ -3,8 +3,17 @@
 }
 
 .battlestations__title {
-  font-size: 2.4rem;
+  font-size: 4rem;
   font-weight: bold;
+  text-align: center;
+}
+
+.battlestations__subtitle {
+  display: block;
+  font-size: 2rem;
+  font-weight: bold;
+  margin-bottom: 2rem;
+  text-align: center;
 }
 
 .battlestations__list {
@@ -32,7 +41,6 @@
 
 .battlestations__item-link {
   height: 100%;
-  /* position: relative; */
   width: 100%;
 }
 
@@ -41,7 +49,6 @@
   box-shadow: var(--shadow);
   height: 26rem;
   object-fit: cover;
-  /* position: absolute; */
   width: 100%;
 }
 
@@ -52,4 +59,8 @@
 
 .battlestations__item-upvotes {
   font-size: 1.2rem;
+}
+
+.battlestations__item-subreddit {
+font-size: 1.2rem;
 }

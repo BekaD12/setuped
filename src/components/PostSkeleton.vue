@@ -1,48 +1,48 @@
 <template>
     <div class="battlestations__item battlestations__item--skeleton">
-        <div class="battlestations__item-thumbnail"></div>
-        <div class="battlestations__item-details">
-            <div class="battlestations__item-title"></div>
-            <div class="battlestations__item-text"></div>
-            <div class="battlestations__item-upvotes"></div>
-        </div>
+        <div alt="Post image" class="battlestations__item-image"></div>
+        <h2 class="battlestations__item-title"></h2>
+        <p class="battlestations__item-upvotes"></p>
     </div>
 </template>
 
 <style scoped>
 .battlestations__item--skeleton {
-    opacity: 0.5;
+    --skeleton-background: hsl(200, 20%, 90%);
+    --skeleton-animation: skeleton-loading 1s linear infinite alternate;
 }
 
-.battlestations__item-thumbnail {
-    height: 100px;
-    width: 100px;
-    background-color: #ddd;
+.battlestations__item-image {
+    animation: var(--skeleton-animation);
+    background: var(--skeleton-background);
+    border-radius: var(--item-radius);
+
 }
 
-.battlestations__item-details {
-    display: flex;
-    flex-direction: column;
-    margin-left: 1rem;
-}
 
 .battlestations__item-title {
-    height: 1rem;
-    width: 50%;
-    margin-bottom: 0.5rem;
-    background-color: #ddd;
-}
-
-.battlestations__item-text {
-    height: 3rem;
-    width: 100%;
-    margin-bottom: 0.5rem;
-    background-color: #ddd;
+    animation: var(--skeleton-animation);
+    background: var(--skeleton-background);
+    border-radius: var(--item-radius);
+    height: 2.5rem;
+    width: 90%;
 }
 
 .battlestations__item-upvotes {
-    height: 1rem;
-    width: 30%;
-    background-color: #ddd;
+    animation: var(--skeleton-animation);
+    background: var(--skeleton-background);
+    border-radius: var(--item-radius);
+    height: 2rem;
+    width: 45%;
+}
+
+@keyframes skeleton-loading {
+    0% {
+        background: var(--skeleton-background);
+    }
+
+    100% {
+        background: hsl(200, 20%, 95%);
+    }
 }
 </style>
