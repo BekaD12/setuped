@@ -19,7 +19,7 @@
 .battlestations__list {
   display: grid;
   gap: 2.5rem;
-  grid-template-columns: repeat(4, 1fr);
+  grid-template-columns: repeat(2, 1fr);
   grid-template-rows: auto;
   justify-content: center;
   margin: 0 auto;
@@ -47,20 +47,20 @@
 .battlestations__item-image {
   border-radius: var(--item-radius);
   box-shadow: var(--shadow);
-  height: 26rem;
+  height: 50rem;
   object-fit: cover;
   width: 100%;
 }
 
 .battlestations__item-title {
-  font-size: 1.4rem;
+  font-size: 1.8rem;
   font-weight: bold;
 }
 
 .battlestations__item-upvotes {
-  font-size: 1.2rem;
+  font-size: 1.6rem;
 }
 
 .battlestations__item-subreddit {
-font-size: 1.2rem;
+font-size: 1.4rem;
 }
