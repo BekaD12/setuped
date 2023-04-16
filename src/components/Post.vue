@@ -25,8 +25,20 @@ const handleScroll = () => {
     loadMore()
 }
 
+const clearLocalStorage = () => {
+  localStorage.clear()
+}
+
 onMounted(async () => {
   try {
+    const cacheKey = 'setuped'
+    const cachedData = localStorage.getItem(cacheKey)
+    if (cachedData) {
+      posts.value = JSON.parse(cachedData)
+      visiblePosts.value = posts.value.slice(0, 8)
+      isLoading.value = false
+    }
+
     const response = await fetch(url)
     const data = await response.json()
     const children = data.data.children
@@ -38,7 +50,12 @@ onMounted(async () => {
     visiblePosts.value = posts.value.slice(0, 8)
     isLoading.value = false
 
+    localStorage.setItem(cacheKey, JSON.stringify(posts.value))
+
     window.addEventListener('scroll', handleScroll)
+
+    // Clear localStorage every 24 hours
+    setInterval(clearLocalStorage, 24 * 60 * 60 * 1000)
   }
   catch (error) {
     console.error(error)
@@ -53,7 +70,7 @@ onMounted(async () => {
     <h1 class="battlestations__title">
       Setuped
     </h1>
-    <span class="battlestations__subtitle">Hot posts of setup from Reddit</span>
+    <span class="battlestations__subtitle text-gradient">Hot posts of setup from Reddit</span>
 
     <div v-if="posts.length" class="battlestations__list">
       <div v-for="post in visiblePosts" :key="post.id" class="battlestations__item">

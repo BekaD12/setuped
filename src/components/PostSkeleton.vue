@@ -1,9 +1,9 @@
 <template>
-    <div class="battlestations__item battlestations__item--skeleton">
-        <div alt="Post image" class="battlestations__item-image"></div>
-        <h2 class="battlestations__item-title"></h2>
-        <p class="battlestations__item-upvotes"></p>
-    </div>
+  <div class="battlestations__item battlestations__item--skeleton">
+    <div alt="Post image" class="battlestations__item-image" />
+    <h2 class="battlestations__item-title" />
+    <p class="battlestations__item-upvotes" />
+  </div>
 </template>
 
 <style scoped>
@@ -18,7 +18,6 @@
     border-radius: var(--item-radius);
 
 }
-
 
 .battlestations__item-title {
     animation: var(--skeleton-animation);

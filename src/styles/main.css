@@ -1,6 +1,6 @@
 @import './markdown.css';
 
-/* @import url('https://fonts.googleapis.com/css2?family=Work+Sans:wght@400;700&display=swap'); */
+@import url('https://fonts.googleapis.com/css2?family=Work+Sans:wght@400;700&display=swap');
 
 :root {
   --background: #edf1F5;
@@ -16,10 +16,10 @@
 }
 
 html.dark {
-  --background: #14181D;
-  --button: #fff;
-  --button-color: #000;
-  --card-background: #20232D;
+  --background: #1c2023;
+  --button: #fffffe;
+  --button-color: #7f5af0;
+  --card-background: #252a2e;
   --item-background: #20232D;
   --item-hover: #f5f6fd;
   color-scheme: dark;
@@ -32,6 +32,7 @@ html.dark {
 
 html {
   background-color: var(--background);
+  font-family: 'Work Sans', sans-serif, -apple-system, blinkmacsystemfont, "Segoe UI", roboto, helvetica, arial, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
   font-size: 62.5%;
 }
 
@@ -57,7 +58,7 @@ html.dark {
 }
 
 #nprogress .bar {
-  background: rgb(13,148,136);
+  background: rgb(13, 148, 136);
   height: 2px;
   left: 0;
   opacity: 0.75;
@@ -65,4 +66,12 @@ html.dark {
   top: 0;
   width: 100%;
   z-index: 1031;
+}
+
+.text-gradient {
+  background: -webkit-linear-gradient(300deg, #93f5ec 20%, #a77bf3 70%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-box-decoration-break: clone;
+  -webkit-text-fill-color: transparent;
 }

@@ -1,6 +1,6 @@
 <template>
-  <main class=" text-#202020 dark:text-gray-200">
+  <main class=" text-#202327 dark:text-gray-200">
+    <Header />
     <RouterView />
-    <Footer />
   </main>
 </template>

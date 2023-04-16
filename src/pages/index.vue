@@ -1,5 +1,5 @@
 <template>
-  <Post/>
+  <Post />
 </template>
 
 <route lang="yaml">
