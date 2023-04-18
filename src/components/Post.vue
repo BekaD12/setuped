@@ -5,7 +5,7 @@ const error = ref(null)
 const visiblePosts = ref([])
 const hiddenSubreddits = ref([])
 
-const subreddits = ['battlestations', 'macsetups']
+const subreddits = ['battlestations']
 const url = `https://www.reddit.com/r/${subreddits.join('+')}/hot.json?limit=100`
 
 const isValidImage = (url) => {
@@ -14,7 +14,7 @@ const isValidImage = (url) => {
 
 const loadMore = () => {
   const start = visiblePosts.value.length
-  const end = start + 8
+  const end = start + 9
   visiblePosts.value = [...visiblePosts.value, ...posts.value.slice(start, end)]
 }
 
@@ -47,15 +47,13 @@ onMounted(async () => {
       if (isValidImage(post.url))
         posts.value.push(post)
     }
-    visiblePosts.value = posts.value.slice(0, 8)
+
+    visiblePosts.value = posts.value.slice(0, 9)
     isLoading.value = false
-
     localStorage.setItem(cacheKey, JSON.stringify(posts.value))
-
     window.addEventListener('scroll', handleScroll)
 
-    // Clear localStorage every 24 hours
-    setInterval(clearLocalStorage, 24 * 60 * 60 * 1000)
+    setInterval(clearLocalStorage, 900000)
   }
   catch (error) {
     console.error(error)
@@ -74,14 +72,15 @@ onMounted(async () => {
 
     <div v-if="posts.length" class="battlestations__list">
       <div v-for="post in visiblePosts" :key="post.id" class="battlestations__item">
-        <a :href="`https://reddit.com${post.permalink}`" class="battlestations__item-link" target="_blank">
-          <img
-            v-if="isValidImage(post.url)" :src="post.url" alt="Post image" class="battlestations__item-image"
-            loading="lazy"
-          >
-          <div v-else class="battlestations__item-no-image">No image available</div>
-        </a>
-        <div>
+        <div class="battlestations__item-image-container">
+          <a :href="`https://reddit.com${post.permalink}`" class="battlestations__item-link" target="_blank">
+            <img
+              v-if="isValidImage(post.url)" :src="post.url" alt="Post image" class="battlestations__item-image"
+              loading="lazy"
+            >
+          </a>
+        </div>
+        <div class="battlestations__text-container">
           <h2 class="battlestations__item-title">
             {{ post.title }}
           </h2>

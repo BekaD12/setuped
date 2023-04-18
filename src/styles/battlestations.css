@@ -18,8 +18,8 @@
 
 .battlestations__list {
   display: grid;
-  gap: 3.5rem;
-  grid-template-columns: repeat(2, 1fr);
+  gap: 2rem;
+  grid-template-columns: repeat(3, 1fr);
   grid-template-rows: auto;
   justify-content: center;
   margin: 0 auto;
@@ -32,24 +32,26 @@
   background: var(--card-background);
   border-radius: var(--item-radius);
   box-shadow: var(--shadow);
-  display: grid;
   gap: 2rem;
-  padding: 3.5rem;
   position: relative;
   transition: box-shadow .6s ease;
 }
 
-.battlestations__item-link {
-  height: 100%;
+.battlestations__item-image-container {
+  height: 30rem;
   width: 100%;
 }
 
 .battlestations__item-image {
-  border-radius: var(--item-radius);
+  border-radius: .5rem .5rem 0 0;
   box-shadow: var(--shadow);
-  height: 50rem;
+  height: 100%;
   object-fit: cover;
   width: 100%;
+}
+
+.battlestations__text-container {
+  padding: 2rem;
 }
 
 .battlestations__item-title {

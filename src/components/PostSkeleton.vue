@@ -1,8 +1,12 @@
 <template>
   <div class="battlestations__item battlestations__item--skeleton">
-    <div alt="Post image" class="battlestations__item-image" />
-    <h2 class="battlestations__item-title" />
-    <p class="battlestations__item-upvotes" />
+    <div class="battlestations__item-image-container">
+      <div alt="Post image" class="battlestations__item-image" />
+    </div>
+    <div class="battlestations__text-container">
+      <h2 class="battlestations__item-title" />
+      <p class="battlestations__item-upvotes" />
+    </div>
   </div>
 </template>
 
@@ -33,6 +37,7 @@
     border-radius: var(--item-radius);
     height: 2rem;
     width: 45%;
+    margin-top: 2rem;
 }
 
 @keyframes skeleton-loading {

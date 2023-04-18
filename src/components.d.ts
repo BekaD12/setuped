@@ -7,6 +7,7 @@ export {}
 
 declare module '@vue/runtime-core' {
   export interface GlobalComponents {
+    B: typeof import('./components/b.vue')['default']
     copy: typeof import('./components/Footer copy.vue')['default']
     Footer: typeof import('./components/Footer.vue')['default']
     Header: typeof import('./components/Header.vue')['default']
