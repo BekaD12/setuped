@@ -53,6 +53,10 @@ html.dark {
   color-scheme: dark;
 }
 
+span {
+  display: block;
+}
+
 #nprogress {
   pointer-events: none;
 }

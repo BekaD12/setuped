@@ -12,6 +12,7 @@ declare module '@vue/runtime-core' {
     Footer: typeof import('./components/Footer.vue')['default']
     Header: typeof import('./components/Header.vue')['default']
     Post: typeof import('./components/Post.vue')['default']
+    Post_v2: typeof import('./components/Post_v2.vue')['default']
     PostSkeleton: typeof import('./components/PostSkeleton.vue')['default']
     README: typeof import('./components/README.md')['default']
     RouterLink: typeof import('vue-router')['RouterLink']

@@ -12,41 +12,40 @@
 
 <style scoped>
 .battlestations__item--skeleton {
-    --skeleton-background: hsl(200, 20%, 90%);
-    --skeleton-animation: skeleton-loading 1s linear infinite alternate;
+  --skeleton-background: hsl(200, 20%, 90%);
+  --skeleton-animation: skeleton-loading 1s linear infinite alternate;
 }
 
 .battlestations__item-image {
-    animation: var(--skeleton-animation);
-    background: var(--skeleton-background);
-    border-radius: var(--item-radius);
-
+  animation: var(--skeleton-animation);
+  background: var(--skeleton-background);
+  border-radius: .5rem .5rem 0 0;
 }
 
 .battlestations__item-title {
-    animation: var(--skeleton-animation);
-    background: var(--skeleton-background);
-    border-radius: var(--item-radius);
-    height: 2.5rem;
-    width: 90%;
+  animation: var(--skeleton-animation);
+  background: var(--skeleton-background);
+  border-radius: var(--item-radius);
+  height: 2.5rem;
+  width: 90%;
 }
 
 .battlestations__item-upvotes {
-    animation: var(--skeleton-animation);
-    background: var(--skeleton-background);
-    border-radius: var(--item-radius);
-    height: 2rem;
-    width: 45%;
-    margin-top: 2rem;
+  animation: var(--skeleton-animation);
+  background: var(--skeleton-background);
+  border-radius: var(--item-radius);
+  height: 2rem;
+  width: 45%;
+  margin-top: 2rem;
 }
 
 @keyframes skeleton-loading {
-    0% {
-        background: var(--skeleton-background);
-    }
+  0% {
+    background: var(--skeleton-background);
+  }
 
-    100% {
-        background: hsl(200, 20%, 95%);
-    }
+  100% {
+    background: hsl(200, 20%, 95%);
+  }
 }
 </style>
