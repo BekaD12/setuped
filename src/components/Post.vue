@@ -3,7 +3,7 @@ const setupList = ref([])
 const isLoading = ref(true)
 
 onMounted(async () => {
-  const response = await fetch('https://www.reddit.com/r/battlestations/top/.json?t=week&limit=100')
+  const response = await fetch('https://www.reddit.com/r/battlestations/hot/.json?t=week&limit=100')
   const data = await response.json()
   setupList.value = data.data.children
     .filter(child => child.data.post_hint === 'image')
