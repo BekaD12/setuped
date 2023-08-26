@@ -1,4 +1,5 @@
 <script setup>
+import he from 'he'
 const setupList = ref([])
 const isLoading = ref(true)
 
@@ -9,7 +10,7 @@ onMounted(async () => {
     .filter(child => child.data.post_hint === 'image')
     .map(child => ({
       id: child.data.id,
-      title: child.data.title,
+      title: he.decode(child.data.title),
       upvote: child.data.ups,
       subreddit: child.data.subreddit,
       url: child.data.url,
@@ -36,15 +37,14 @@ onMounted(async () => {
         <div v-for="setup in setupList" :key="setup.id" class="battlestations__item">
           <div class="battlestations__item-image-container">
             <a :href="setup.url" target="_blank" class="battlestations__item-link">
-              <img :src="setup.image" alt="Anime thumbnail" class="battlestations__item-image" loading="lazy">
+              <img :src="setup.image" alt="Reddit image" title="Reddit image link" class="battlestations__item-image" loading="lazy">
             </a>
           </div>
           <div class="battlestations__text-container">
-            <a :href="setup.permalink" target="_blank" class="battlestations__item-title">
+            <a :href="setup.permalink" target="_blank" class="battlestations__item-title" title="Reddit post link">
               {{ setup.title }}
             </a>
-            <span class="battlestations__item-upvotes">Upvotes: {{ setup.upvote }}</span>
-            <!-- <span class="battlestations__item-subreddit">subreddit : {{ setup.subreddit }}</span> -->
+            <span class="battlestations__item-upvotes">{{ setup.upvote }} Upvotes</span>
           </div>
         </div>
       </template>

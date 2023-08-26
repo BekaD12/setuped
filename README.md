@@ -1,5 +1,9 @@
 <h1 align="center">Setuped</h1>
-  
+
+<p align="center">
+ "Setuped - Easily browse through trending setups from the 'r/battlestations' subreddit."
+</p>
+
 [Live Preview](https://setuped.netlify.app/)
 
 ## Install

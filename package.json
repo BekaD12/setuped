@@ -3,8 +3,8 @@
   "private": true,
   "packageManager": "pnpm@7.17.1",
   "scripts": {
-    "build": "vite-ssg build",
     "dev": "vite --port 3333 --open",
+    "build": "vite-ssg build",
     "lint": "eslint .",
     "preview": "vite preview",
     "preview-https": "serve dist",
@@ -18,6 +18,7 @@
     "@unocss/reset": "^0.47.6",
     "@vueuse/core": "^9.6.0",
     "@vueuse/head": "^1.0.22",
+    "he": "^1.2.0",
     "nprogress": "^0.2.0",
     "pinia": "^2.0.28",
     "vue": "^3.2.45",
