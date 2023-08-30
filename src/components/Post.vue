@@ -37,11 +37,11 @@ onMounted(async () => {
         <div v-for="setup in setupList" :key="setup.id" class="battlestations__item">
           <div class="battlestations__item-image-container">
             <a :href="setup.url" target="_blank" class="battlestations__item-link">
-              <img :src="setup.image" alt="Reddit image" title="Reddit image link" class="battlestations__item-image" loading="lazy">
+              <img :src="setup.image" alt="Battlestation image" title="Go to the Reddit image link" class="battlestations__item-image" loading="lazy">
             </a>
           </div>
           <div class="battlestations__text-container">
-            <a :href="setup.permalink" target="_blank" class="battlestations__item-title" title="Reddit post link">
+            <a :href="setup.permalink" target="_blank" class="battlestations__item-title" title="Go to Reddit post link">
               {{ setup.title }}
             </a>
             <span class="battlestations__item-upvotes">{{ setup.upvote }} Upvotes</span>
