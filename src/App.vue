@@ -5,7 +5,7 @@ useHead({
     { name: 'description', content: 'Explore the hottest setup posts from Reddit and get inspired to enhance your own setup' },
     {
       name: 'theme-color',
-      content: computed(() => isDark.value ? '#00aba9' : '#ffffff'),
+      content: computed(() => isDark.value ? '#121212' : '#ffffff'),
     },
   ],
   link: [
