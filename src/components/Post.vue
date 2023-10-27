@@ -99,125 +99,29 @@ onMounted(async () => {
   </div>
 
   <div v-if="isModalOpen" class="battlestations__modal" :class="{ open: isModalOpen }" @click="closeModal">
-    <div class="battlestations__modal-content" @click.stop>
+    <div class="battlestations__modal-container" @click.stop>
       <div i="carbon-close" class="battlestations__modal-close" @click="closeModal" />
-      <img :src="selectedSetup.image" alt="Battlestation image" class="modal-image">
-      <div class="modal-details">
-        <span class="battlestations__modal-title">{{ selectedSetup.title }}</span>
-        <div class="battlestations__modal-text">
-          <span class="battlestations__modal-author">u/{{ selectedSetup.author }}</span>
-          <span class="battlestations__modal-date">{{ getPostCreationTime(selectedSetup.createdUtc).timeAgo }}</span>
+      <div class="battlestations__modal-content">
+        <img :src="selectedSetup.image" alt="Battlestation image" class="modal-image">
+        <div class="modal-details">
+          <span class="battlestations__modal-title">{{ selectedSetup.title }}</span>
+          <div class="battlestations__modal-text">
+            <span class="battlestations__modal-author">u/{{ selectedSetup.author }}</span>
+            <span class="battlestations__modal-date">{{ getPostCreationTime(selectedSetup.createdUtc).timeAgo }}</span>
+          </div>
+          <p v-if="selectedSetup.description" class="battlestations__modal-desc">
+            {{ selectedSetup.description }}
+          </p>
+          <a :href="selectedSetup.permalink" target="_blank" class="battlestations__modal-link btn">Open on Reddit
+            <div i="carbon-launch" />
+          </a>
         </div>
-        <p v-if="selectedSetup.description" class="battlestations__modal-desc">
-          {{ selectedSetup.description }}
-        </p>
-        <a :href="selectedSetup.permalink" target="_blank" class="battlestations__modal-link btn">Open on Reddit
-          <div i="carbon-launch" />
-        </a>
       </div>
     </div>
   </div>
   <div v-if="isModalOpen" class="modal-overlay" @click="closeModal" />
 </template>
 
-<style scoped>
-.battlestations__modal {
-  display: none;
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background-color: rgba(0, 0, 0, 0.7);
-  z-index: 1000;
-  transition: opacity 0.3s;
-}
-
-.battlestations__modal.open {
-  display: block;
-}
-
-.battlestations__modal-content {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  background: var(--card-background);
-  border-radius: var(--item-radius);
-  box-shadow: var(--shadow);
-  padding: 3.5rem;
-}
-
-.battlestations__modal-close {
-  width: 2.5rem;
-  cursor: pointer;
-  height: 2.5rem;
-  position: absolute;
-  right: .75rem;
-  top: .75rem;
-  color: var(--button-color);
-}
-
-.battlestations__modal-close:active {
-  background: rgba(255, 255, 255, 0.06);
-}
-
-.battlestations__modal-title {
-  margin-top: 1rem;
-  font-size: 1.8rem;
-  font-weight: bold;
-}
-
-.battlestations__modal-text {
-  margin: 1rem 0;
-  display: flex;
-  gap: .5rem;
-  font-size: 1.6rem;
-}
-
-.battlestations__modal-desc {
-  padding: 1.5rem 0;
-  letter-spacing: .1rem;
-  font-size: 1.5rem;
-}
-
-.battlestations__modal-link {
-  display: flex;
-  width: fit-content;
-  padding: 1.5rem;
-  align-items: center;
-  gap: .5rem;
-}
-
-.battlestations__modal .carbon-launch {
-  margin-top: -0.2rem;
-}
-
-.modal-overlay {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background: var(--overlay);
-  z-index: 999;
-}
-
-@media (max-width: 576px) {
-  .battlestations__modal-content {
-    padding: 0;
-    left: unset;
-    top: 10%;
-    transform: none;
-    margin: auto 1rem;
-  }
-
-  .modal-details {
-    padding: 1.5rem;
-  }
-
-  .battlestations__modal-desc {
-    line-height: 1.2;
-  }
-}
+<style>
+@import '~/styles/modal.css';
 </style>

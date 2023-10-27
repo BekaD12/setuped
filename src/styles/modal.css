@@ -1,0 +1,104 @@
+.battlestations__modal {
+  background-color: rgba(0, 0, 0, 0.7);
+  display: none;
+  height: 100%;
+  left: 0;
+  position: fixed;
+  top: 0;
+  transition: opacity 0.3s;
+  width: 100%;
+  z-index: 1000;
+}
+
+.battlestations__modal.open {
+  display: block;
+}
+
+.battlestations__modal-container {
+  background: var(--card-background);
+  border-radius: var(--item-radius);
+  box-shadow: var(--shadow);
+  left: 50%;
+  padding: 3.5rem;
+  position: absolute;
+  top: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.battlestations__modal-container img {
+  max-height: 70vh;
+}
+
+.battlestations__modal-close {
+  color: var(--button-color);
+  cursor: pointer;
+  height: 2.5rem;
+  position: absolute;
+  right: .75rem;
+  top: .75rem;
+  width: 2.5rem;
+}
+
+.battlestations__modal-close:active {
+  background: rgba(255, 255, 255, 0.06);
+}
+
+.battlestations__modal-title {
+  font-size: 1.8rem;
+  font-weight: bold;
+  margin-top: 1rem;
+}
+
+.battlestations__modal-text {
+  display: flex;
+  font-size: 1.6rem;
+  gap: .5rem;
+  margin: 1rem 0;
+}
+
+.battlestations__modal-desc {
+  font-size: 1.5rem;
+  letter-spacing: .1rem;
+  max-width: 60rem;
+  padding: 1.5rem 0;
+}
+
+.battlestations__modal-link.btn {
+  align-items: center;
+  display: flex;
+  gap: .5rem;
+  padding: 1.5rem;
+  width: fit-content;
+}
+
+.battlestations__modal .carbon-launch {
+  margin-top: -0.2rem;
+}
+
+.modal-overlay {
+  background: var(--overlay);
+  height: 100%;
+  left: 0;
+  position: fixed;
+  top: 0;
+  width: 100%;
+  z-index: 999;
+}
+
+@media (max-width: 576px) {
+  .battlestations__modal-container {
+    left: unset;
+    margin: auto 1rem;
+    padding: 0;
+    top: 10%;
+    transform: none;
+  }
+
+  .modal-details {
+    padding: 1.5rem;
+  }
+
+  .battlestations__modal-desc {
+    line-height: 1.2;
+  }
+}
