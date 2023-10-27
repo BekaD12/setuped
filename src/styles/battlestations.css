@@ -45,6 +45,7 @@
 .battlestations__item-image {
   border-radius: .5rem .5rem 0 0;
   box-shadow: var(--shadow);
+  cursor: pointer;
   height: 100%;
   object-fit: cover;
   width: 100%;
@@ -55,11 +56,15 @@
 }
 
 .battlestations__item-title {
+  cursor: pointer;
   font-size: 1.8rem;
+  font-weight: bold;
 }
 
 .battlestations__item-upvotes {
-  font-size: 1.6rem;
+  align-items: center;
+  align-items: self-start;
+  display: flex;
 }
 
 .battlestations__item-subreddit {

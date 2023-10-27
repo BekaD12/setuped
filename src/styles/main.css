@@ -3,23 +3,25 @@
 :root {
   --background: #edf1F5;
   --button: #000;
-  --button-color: #fff;
+  --button-color: #000;
   --button-radius: 1rem;
   --card-background: #fff;
   --item-active: #02a9ff;
   --item-background: #edf1F5;
   --item-hover: #d6e0ef;
   --item-radius: .5rem;
+  --overlay: rgba(250, 250, 250, 0.8);
   --shadow: 0 0 2.5rem rgb(0 0 0 / 10%);
 }
 
 html.dark {
   --background: #1c2023;
   --button: #fffffe;
-  --button-color: #7f5af0;
+  --button-color: #fff;
   --card-background: #252a2e;
   --item-background: #20232D;
   --item-hover: #f5f6fd;
+  --overlay: rgba(0, 0, 0, 0.6);
   color-scheme: dark;
 }
 

@@ -12,6 +12,8 @@ declare module '@vue/runtime-core' {
     Footer: typeof import('./components/Footer.vue')['default']
     Free: typeof import('./components/Free.vue')['default']
     Header: typeof import('./components/Header.vue')['default']
+    ImageModal: typeof import('./components/ImageModal.vue')['default']
+    Modal: typeof import('./components/Modal.vue')['default']
     PokemonModal: typeof import('./components/PokemonModal.vue')['default']
     Post: typeof import('./components/Post.vue')['default']
     Post_v2: typeof import('./components/Post_v2.vue')['default']
