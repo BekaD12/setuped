@@ -29,7 +29,7 @@
   max-height: 70vh;
 }
 
-.battlestations__modal-close {
+[i~="carbon-close"].battlestations__modal-close {
   color: var(--button-color);
   cursor: pointer;
   height: 2.5rem;
