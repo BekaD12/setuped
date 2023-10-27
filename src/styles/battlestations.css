@@ -62,13 +62,13 @@
 }
 
 .battlestations__item-upvotes {
-  align-items: center;
-  align-items: self-start;
+  align-items: flex-start;
   display: flex;
 }
 
-.battlestations__item-subreddit {
-  font-size: 1.4rem;
+.battlestations__item-upvotes [i~="carbon-arrow-shift-down"] {
+  margin-top: 0.1rem;
+  transform: rotate(180deg);
 }
 
 

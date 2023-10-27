@@ -5,24 +5,20 @@ const isLoading = ref(true)
 const isModalOpen = ref(false)
 const selectedSetup = ref(null)
 
-const lockBodyScroll = () => {
-  document.body.style.overflow = 'hidden'
-}
-
-const unlockBodyScroll = () => {
-  document.body.style.overflow = ''
+const toggleScrollLock = (lock) => {
+  document.body.style.overflow = lock ? 'hidden' : ''
 }
 
 const openModal = (setup) => {
   isModalOpen.value = true
   selectedSetup.value = setup
-  lockBodyScroll()
+  toggleScrollLock(true)
 }
 
 const closeModal = () => {
   isModalOpen.value = false
   selectedSetup.value = null
-  unlockBodyScroll()
+  toggleScrollLock(false)
 }
 
 const getPostCreationTime = (createdUtc) => {
@@ -90,7 +86,7 @@ onMounted(async () => {
               {{ setup.title }}
             </span>
             <span class="battlestations__item-upvotes">
-              <div i="carbon-arrow-up" /> {{ setup.upvote }} Upvotes
+              <div i="carbon-arrow-shift-down" /> {{ setup.upvote }} Upvotes
             </span>
           </div>
         </div>
