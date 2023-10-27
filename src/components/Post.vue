@@ -86,7 +86,7 @@ onMounted(async () => {
               {{ setup.title }}
             </span>
             <span class="battlestations__item-upvotes">
-              <div i="carbon-arrow-shift-down" /> {{ setup.upvote }} Upvotes
+              <div i="lucide-arrow-big-up" /> {{ setup.upvote }} Upvotes
             </span>
           </div>
         </div>

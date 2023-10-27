@@ -66,9 +66,10 @@
   display: flex;
 }
 
-.battlestations__item-upvotes [i~="carbon-arrow-shift-down"] {
+.battlestations__item-upvotes [i~="lucide-arrow-big-up"] {
   margin-top: 0.1rem;
-  transform: rotate(180deg);
+  width: 2rem;
+  height: 2rem;
 }
 
 
